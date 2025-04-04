@@ -1,16 +1,20 @@
-
 import { Github, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 export function HeroSection() {
-  const socialLinks = [
-    { icon: Github, href: "https://github.com/joyalaliyas", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/joyalaliyas", label: "LinkedIn" },
-    { icon: Instagram, href: "https://instagram.com/joyalaliyas", label: "Instagram" },
-  ];
-
-  return (
-    <section id="home" className="min-h-screen flex items-center pt-16 pb-20 relative overflow-hidden">
+  const socialLinks = [{
+    icon: Github,
+    href: "https://github.com/joyalaliyas",
+    label: "GitHub"
+  }, {
+    icon: Linkedin,
+    href: "https://linkedin.com/in/joyalaliyas",
+    label: "LinkedIn"
+  }, {
+    icon: Instagram,
+    href: "https://instagram.com/joyalaliyas",
+    label: "Instagram"
+  }];
+  return <section id="home" className="min-h-screen flex items-center pt-16 pb-20 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-muted-teal/20 rounded-full blur-3xl"></div>
@@ -42,18 +46,9 @@ export function HeroSection() {
           </div>
           
           <div className="flex gap-6">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-accent transition-transform hover:scale-110"
-                aria-label={link.label}
-              >
+            {socialLinks.map(link => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-transform hover:scale-110" aria-label={link.label}>
                 <link.icon className="h-6 w-6" />
-              </a>
-            ))}
+              </a>)}
           </div>
         </div>
         
@@ -61,11 +56,7 @@ export function HeroSection() {
           <div className="relative">
             {/* Profile image with decorative elements */}
             <div className="w-64 h-64 sm:w-80 sm:h-80 overflow-hidden rounded-full border-4 border-orange-red relative z-10 animate-scale-in">
-              <img
-                src="https://placehold.co/400x400/90AEAD/FFFFFF?text=Joyal+Aliyas&font=montserrat"
-                alt="Joyal Aliyas"
-                className="w-full h-full object-cover"
-              />
+              <img alt="Joyal Aliyas" src="/lovable-uploads/5fa16de5-7bdb-4454-a144-5286519170ba.jpg" className="w-full h-full object-cover" />
             </div>
             
             {/* Decorative circles */}
@@ -74,6 +65,5 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
